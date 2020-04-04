@@ -33,3 +33,26 @@ En el navegador ingresa a:
 
 http://localhost:5000/project/Flask
 
+
+
+
+## Flask-Restful
+```
+pip install -r requirements
+python main.py
+```
+Register Endpoint
+```
+localhost:5000/auth/register
+```
+Json para enviar el post
+```json
+{
+	"username": "reddy",
+	"password": "12345"
+}
+```
+## Intall MongoDB
+[Install Mongo Guia](https://treehouse.github.io/installation-guides/windows/mongo-windows.html)
+
+
