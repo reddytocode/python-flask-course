@@ -1,12 +1,14 @@
-from flask import Flask
+from app import create_app, init_api
+from app.db.db_extension import db
+# from app.db.db_config  
 
-app = Flask(__name__)
+app = create_app()
+init_api(app)
 
-@app.route("/project/Flask")
-def hello():
-    message = "Flask 1.1.1 Information"
-    return "<h1 style='color: red;'>{}</h1>".format(message)
+"""----"""
+db.init_app(app)
+"""----"""
 
 if __name__ == '__main__':
-    app.run(port=5000, host='0.0.0.0')
-    
+    print(app.config['MONGOALCHEMY_DATABASE'])
+    app.run(port=5000, debug = True)
